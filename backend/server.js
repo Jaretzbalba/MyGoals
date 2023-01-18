@@ -15,6 +15,7 @@ app.use(express.json());
 
 //Setup Routes For Which The Server Is Listening
 app.use('/api/goals', require('./routes/goalRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 
 //Middleware
 app.use(errorHandler);
