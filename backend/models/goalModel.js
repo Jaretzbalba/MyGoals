@@ -7,6 +7,7 @@ const goalSchema = mongoose.Schema(
       require: [true, 'Please add a text value'],
     },
   },
+  // create createdAt and updatedAt field automatically
   { timestamps: true }
 );
 
