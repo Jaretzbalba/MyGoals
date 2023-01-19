@@ -20,9 +20,11 @@ app.use('/api/users', require('./routes/userRoutes'));
 
 // Serve frontend
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '..', 'frontend')));
+  app.use(express.static(path.join(__dirname, 'build')));
 
-  app.get('*', (req, res) => res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html')));
+  app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
 } else {
   app.get('/', (req, res) => res.send('Please set to production'));
 }
